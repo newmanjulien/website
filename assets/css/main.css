@@ -3313,7 +3313,7 @@ input, select, textarea {
 				}
 
 				#wrapper > section > header h1:after, #wrapper > section > header h2:after {
-					background: #FB0404;
+					background: #FFFFFF;
 					border-radius: 0.5rem;
 					content: '';
 					display: block;
