@@ -97,7 +97,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #7C53F0;
+		background: #FFFFFF;
 		overflow-x: hidden;
 	}
 
@@ -151,12 +151,12 @@ input, select, textarea {
 		}
 
 	body {
-		background-color: #7C53F0;
-		color: #7C53F0;
+		background-color: #FFFFFF;
+		color: #FFFFFF;
 	}
 
 	body, input, select, textarea {
-		color: #7C53F0;
+		color: #FFFFFF;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
@@ -170,7 +170,7 @@ input, select, textarea {
 		-ms-transition: border-bottom-color 0.25s ease-in-out;
 		transition: border-bottom-color 0.25s ease-in-out;
 		text-decoration: none;
-		color: #7C53F0;
+		color: #FFFFFF;
 		border-bottom: dotted 1px;
 	}
 
@@ -181,7 +181,7 @@ input, select, textarea {
 
 	strong, b {
 		font-weight: 600;
-		color: #7C53F0;
+		color: #FFFFFF;
 	}
 
 	em, i {
@@ -193,7 +193,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #7C53F0;
+		color: #FFFFFF;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 600;
 		letter-spacing: 0.175em;
@@ -2164,7 +2164,7 @@ input, select, textarea {
 	}
 
 		select option {
-			background-color: #7C53F0;
+			background-color: #FFFFFF;
 			color: #000000;
 		}
 
@@ -2245,7 +2245,7 @@ input, select, textarea {
 			content: '\f00c';
 			background-color: #FB0404;
 			border-color: #FB0404;
-			color: #7C53F0;
+			color: #FFFFFF;
 		}
 
 		input[type="checkbox"]:focus + label:before,
@@ -3284,7 +3284,7 @@ input, select, textarea {
 		}
 
 			#wrapper > section > header:before {
-				background: #FB0404;
+				background: #FFFFFF;
 				content: '';
 				display: block;
 				margin-top: 1rem;
@@ -3297,7 +3297,7 @@ input, select, textarea {
 			}
 
 				#wrapper > section > header h1:before, #wrapper > section > header h2:before {
-					background: #7C53F0;
+					background: #FFFFFF;
 					content: '';
 					display: block;
 					height: 2px;
@@ -3306,7 +3306,7 @@ input, select, textarea {
 				}
 
 				#wrapper > section > header h1:after, #wrapper > section > header h2:after {
-					background: #7C53F0;
+					background: #FFFFFF;
 					border-radius: 0.5rem;
 					content: '';
 					display: block;
@@ -3363,7 +3363,7 @@ input, select, textarea {
 			}
 
 			#wrapper > section:last-of-type > header:after {
-				background: #FB0404;
+				background: #FFFFFF;
 				border-radius: 0.5rem;
 				bottom: -1.5rem;
 				content: '';
