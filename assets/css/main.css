@@ -3268,6 +3268,7 @@ input, select, textarea {
 				grid-area: content;
 				max-width: 60rem;
 				position: relative;
+				color: #000000;
 			}
 
 			#wrapper section > footer {
