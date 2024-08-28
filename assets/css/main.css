@@ -158,11 +158,11 @@ input, select, textarea {
 
 	body {
 		background-color: #ffffff;
-		color: #000000;
+		color: #ffffff;
 	}
 
 	body, input, select, textarea {
-		color: #000000;
+		color: #ffffff;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
