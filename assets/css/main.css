@@ -3217,7 +3217,7 @@ input, select, textarea {
 
 		#wrapper:before {
 			background-attachment: fixed;
-			background-color: #FFFFFF;
+			background-color: #FB0404;
 			background-position: -50% 10%;
 			background-repeat: repeat-y;
 			background-size: 75% auto;
@@ -3284,7 +3284,7 @@ input, select, textarea {
 		}
 
 			#wrapper > section > header:before {
-				background: #FFFFFF;
+				background: #FB0404;
 				content: '';
 				display: block;
 				margin-top: 1rem;
