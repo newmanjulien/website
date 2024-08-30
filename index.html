@@ -9,23 +9,6 @@
 		<meta name="keywords" content="" />
 		<link rel="shortcut icon" type="image/ico" href="images/favicon.ico?">
 		<link rel="stylesheet" href="assets/css/main.css" />
-
-		<!-- Chatbot Script -->
-		<script type="text/javascript" src="https://bot.insertchat.com/widgets/chatbot.js" async></script>
-		<script>
-		ICG_BOT_ID = '22b51b7a-5006-43ee-befd-01251d87fac6';
-		ICG_BOT_TYPE = 'bubble';
-		ICG_BOT_HEIGHT = 750;
-		ICG_BOT_BG_COLOR = '#fff';
-		ICG_BOT_AUTOFOCUS = false;
-		ICG_BOT_OVERRIDE_OPENER = '';
-		ICG_USER_ID = '';
-		ICG_USER_EMAIL = '';
-		ICG_USER_FIRSTNAME = '';
-		ICG_USER_LASTNAME = '';
-		ICG_USER_TAGS = [];
-		ICG_USER_METADATA = {};
-		</script>
 	</head>
 	<body class="is-preload">
 
@@ -118,5 +101,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Chatbot Script -->
+			<script>
+			!function(w, d, s, ...args){
+			  var div = d.createElement('div');
+			  div.id = 'aichatbot';
+			  d.body.appendChild(div);
+			  w.chatbotConfig = args;
+			  var f = d.getElementsByTagName(s)[0],
+			  j = d.createElement(s);
+			  j.defer = true;
+			  j.type = 'module';
+			  j.src = 'https://aichatbot.sendbird.com/index.js';
+			  f.parentNode.insertBefore(j, f);
+			}(window, document, 'script', 'C110A87A-648C-4089-B881-8D25DB0D6170', 'onboarding_bot', {
+			  apiHost: 'https://api-cf-us-3.sendbird.com',
+			});
+			</script>
 	</body>
 </html>
