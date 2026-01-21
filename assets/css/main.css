@@ -1,111 +1,64 @@
-@import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700,300i,600i,700i|Raleway:600,800");
 
 /* ==========================================================================
-   CSS Reset
+   CSS Variables
    ========================================================================== */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+:root {
+  /* Colors */
+  --color-primary: #fb0404;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Fonts */
+  --font-primary: "Source Sans Pro", Helvetica, sans-serif;
+  --font-heading: "Raleway", Helvetica, sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.25s ease-in-out;
+  --transition-standard: 1s ease;
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1rem; /* 16px */
+  --space-md: 1.5rem; /* 24px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 3rem; /* 48px */
+  --space-2xl: 4rem; /* 64px */
+  --space-3xl: 5rem; /* 80px */
+  --space-4xl: 6rem; /* 96px */
+  --space-5xl: 7.5rem; /* 120px */
+  --space-6xl: 8rem; /* 128px */
+  --space-7xl: 10rem; /* 160px */
+
+  /* Fluid Typography */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
+  --text-hero: clamp(3rem, 2rem + 4vw, 5rem);
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+/* ==========================================================================
+   CSS Reset (Modern Minimal)
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
   display: block;
+  max-width: 100%;
 }
 
 ol,
@@ -118,7 +71,6 @@ ul {
    ========================================================================== */
 
 html {
-  box-sizing: border-box;
   overflow-x: hidden;
   font-size: 18pt;
 }
@@ -142,24 +94,14 @@ html {
 }
 
 @media screen and (max-width: 480px) {
-  html,
-  body {
-    min-width: 320px;
-  }
   html {
     font-size: 11pt;
   }
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 body {
-  background-color: #ffffff;
-  color: #ffffff;
+  background-color: var(--color-white);
+  color: var(--color-white);
   overflow-x: hidden;
   line-height: 1;
 }
@@ -176,7 +118,7 @@ body.is-preload *:after {
    ========================================================================== */
 
 body {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: var(--font-primary);
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.0375em;
@@ -184,9 +126,9 @@ body {
 }
 
 a {
-  transition: border-bottom-color 0.25s ease-in-out;
+  transition: border-bottom-color var(--transition-fast);
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-white);
   border-bottom: dotted 1px;
 }
 
@@ -198,7 +140,7 @@ a:hover {
 strong,
 b {
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 em,
@@ -207,7 +149,7 @@ i {
 }
 
 p {
-  margin: 0 0 2rem 0;
+  margin: 0 0 var(--space-lg) 0;
 }
 
 h1,
@@ -216,12 +158,12 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ffffff;
-  font-family: "Raleway", Helvetica, sans-serif;
+  color: var(--color-white);
+  font-family: var(--font-heading);
   font-weight: 600;
   letter-spacing: 0.175em;
   line-height: 1.75;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 var(--space-md) 0;
   text-transform: uppercase;
 }
 
@@ -231,54 +173,28 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: #000000;
+  color: var(--color-black);
   text-decoration: none;
 }
 
 h1 {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
-  font-size: 5rem;
+  font-family: var(--font-primary);
+  font-size: var(--text-hero);
   font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 1.1;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 var(--space-md) 0;
   text-transform: none;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: var(--text-xl);
   font-weight: 800;
-  margin: 0 0 2rem 0;
+  margin: 0 0 var(--space-lg) 0;
 }
 
 h3 {
-  font-size: 0.875rem;
-}
-
-@media screen and (max-width: 736px) {
-  h1 {
-    font-size: 4.5rem;
-    line-height: 1.1;
-  }
-  h2 {
-    font-size: 1.25rem;
-    line-height: 1.7;
-  }
-  h3 {
-    font-size: 0.9rem;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  h1 {
-    font-size: 3.75rem;
-  }
-  h2 {
-    font-size: 1.125rem;
-  }
-  h3 {
-    font-size: 0.8rem;
-  }
+  font-size: var(--text-sm);
 }
 
 /* ==========================================================================
@@ -391,12 +307,12 @@ a.arrow:before {
 #wrapper {
   position: relative;
   width: 100vw;
-  padding: 0 0 10rem 0;
+  padding: 0 0 var(--space-7xl) 0;
 }
 
 #wrapper:before {
   background-attachment: fixed;
-  background-color: #fb0404;
+  background-color: var(--color-primary);
   background-position: -50% 10%;
   background-repeat: repeat-y;
   background-size: 75% auto;
@@ -408,7 +324,7 @@ a.arrow:before {
   top: 0;
   width: 50vw;
   z-index: -1;
-  transition: opacity 1s ease;
+  transition: opacity var(--transition-standard);
 }
 
 body.is-preload #wrapper:before {
@@ -420,7 +336,7 @@ body.is-preload #wrapper:before {
   grid-template-areas: "header content" "footer content";
   grid-template-columns: 50vw 50vw;
   grid-template-rows: 1fr;
-  margin: 7.5rem 0 0 0;
+  margin: var(--space-5xl) 0 0 0;
 }
 
 #wrapper section:first-child {
@@ -431,16 +347,16 @@ body.is-preload #wrapper:before {
   grid-area: header;
   justify-self: end;
   text-align: right;
-  padding: 0 10rem 0 5rem;
+  padding: 0 var(--space-7xl) 0 var(--space-3xl);
   width: 35rem;
 }
 
 #wrapper section > header h2 {
-  margin: 0 0 5rem 0;
+  margin: 0 0 var(--space-3xl) 0;
 }
 
 #wrapper section > header h1 + p {
-  font-family: "Raleway", Helvetica, sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.8rem;
   letter-spacing: 0.175em;
   line-height: 2.5;
@@ -455,7 +371,7 @@ body.is-preload #wrapper:before {
   grid-area: content;
   max-width: 60rem;
   position: relative;
-  padding: 0 5rem;
+  padding: 0 var(--space-3xl);
 }
 
 /* Section Header Decorative Lines */
@@ -465,14 +381,14 @@ body.is-preload #wrapper:before {
 }
 
 #wrapper > section > header:before {
-  background: #ffffff;
+  background: var(--color-white);
   content: "";
   display: block;
-  margin-top: 1rem;
+  margin-top: var(--space-sm);
   position: absolute;
   width: 2px;
-  height: calc(100% + 10rem);
-  left: calc(50vw - 5rem);
+  height: calc(100% + var(--space-7xl));
+  left: calc(50vw - var(--space-3xl));
 }
 
 #wrapper > section > header h1,
@@ -482,19 +398,19 @@ body.is-preload #wrapper:before {
 
 #wrapper > section > header h1:before,
 #wrapper > section > header h2:before {
-  background: #ffffff;
+  background: var(--color-white);
   content: "";
   display: block;
   height: 2px;
   position: absolute;
-  top: 1rem;
-  right: -5rem;
+  top: var(--space-sm);
+  right: calc(-1 * var(--space-3xl));
   width: 2.5rem;
 }
 
 #wrapper > section > header h1:after,
 #wrapper > section > header h2:after {
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 0.5rem;
   content: "";
   display: block;
@@ -519,16 +435,19 @@ body.is-preload #wrapper:before {
 
 /* Nested Sections */
 
-#wrapper > section > .content > section {
+#wrapper > section > .content > section,
+.nested-section {
   position: relative;
   left: calc(-50vw - 5rem);
 }
 
-#wrapper > section > .content > section:first-child {
-  margin-top: 6rem;
+#wrapper > section > .content > section:first-child,
+.nested-section:first-child {
+  margin-top: var(--space-4xl);
 }
 
-#wrapper > section > .content > section > header {
+#wrapper > section > .content > section > header,
+.nested-header {
   width: 32rem;
 }
 
@@ -545,9 +464,9 @@ body.is-preload #wrapper > section.intro {
 }
 
 #wrapper > section.intro > header {
-  padding-top: 4rem;
+  padding-top: var(--space-2xl);
   width: 100%;
-  transition: transform 1s ease;
+  transition: transform var(--transition-standard);
 }
 
 body.is-preload #wrapper > section.intro > header {
@@ -567,7 +486,7 @@ body.is-preload #wrapper > section.intro > header {
 #wrapper > section.intro > .content {
   height: 100vh;
   max-width: none;
-  transition: transform 1s ease;
+  transition: transform var(--transition-standard);
 }
 
 body.is-preload #wrapper > section.intro > .content {
@@ -581,7 +500,7 @@ body.is-preload #wrapper > section.intro > .content {
 }
 
 #wrapper > section:last-of-type > header:after {
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 0.5rem;
   bottom: -1.5rem;
   content: "";
@@ -653,8 +572,8 @@ body.is-preload #wrapper > section.intro > .content {
 
   #wrapper > section.intro > header > * {
     transition:
-      transform 1s ease,
-      opacity 1s ease;
+      transform var(--transition-standard),
+      opacity var(--transition-standard);
   }
 
   body.is-preload #wrapper > section.intro > header {
@@ -714,7 +633,7 @@ body.is-preload #wrapper > section.intro > .content {
 
   #wrapper > section > header {
     background-attachment: fixed;
-    background-color: #fb0404;
+    background-color: var(--color-primary);
     background-position: 25% 50%;
     background-repeat: repeat-y;
     background-size: 40rem auto;
@@ -825,7 +744,18 @@ body.is-preload #wrapper > section.intro > .content {
 }
 
 /* ==========================================================================
-   Responsive: Extra Small (max-width: 360px)
+   Responsive: Extra Small (max-width: 480px)
+   ========================================================================== */
+
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    min-width: 320px;
+  }
+}
+
+/* ==========================================================================
+   Responsive: Tiny (max-width: 360px)
    ========================================================================== */
 
 @media screen and (max-width: 360px) {
@@ -879,5 +809,5 @@ body.is-mobile #wrapper > section.intro > header {
    ========================================================================== */
 
 .black-text {
-  color: #000000;
+  color: var(--color-black);
 }

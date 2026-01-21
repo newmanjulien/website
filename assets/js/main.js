@@ -1,25 +1,41 @@
-/*
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+(function () {
+  "use strict";
 
-(function ($) {
-  var $window = $(window),
-    $body = $("body");
+  const $body = document.body;
 
   // Play initial animations on page load.
-  $window.on("load", function () {
-    window.setTimeout(function () {
-      $body.removeClass("is-preload");
+  window.addEventListener("load", () => {
+    window.setTimeout(() => {
+      $body.classList.remove("is-preload");
     }, 100);
   });
 
-  // Mobile?
-  if (browser.mobile) $body.addClass("is-mobile");
+  // Mobile check (simplified)
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    );
+  if (isMobile) {
+    $body.classList.add("is-mobile");
+  }
 
-  // Scrolly - smooth scroll for the arrow button.
-  $(".scrolly").scrolly({
-    offset: 100,
+  // Smooth scroll for .scrolly links
+  document.querySelectorAll(".scrolly").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const offset = 100;
+          const targetPosition =
+            target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
   });
-})(jQuery);
+})();
