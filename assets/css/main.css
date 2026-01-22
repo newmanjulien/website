@@ -673,8 +673,13 @@ body.is-preload #wrapper > section.intro > .content {
     margin-top: 0;
   }
 
-  #wrapper > section > .content > section > header {
+  #wrapper > section > .content > section > header,
+  .nested-header,
+  .nested-header h3,
+  .nested-header p,
+  .nested-header a {
     width: 100%;
+    color: var(--color-black);
   }
 
   #wrapper > section > .content > section:last-child {
