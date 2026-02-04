@@ -709,6 +709,10 @@ body.is-preload #wrapper > section.intro > .content {
     margin-left: 0;
   }
 
+  #wrapper > section.intro > .content {
+    display: none;
+  }
+
   #wrapper > section:last-of-type > header:after {
     display: none;
   }
@@ -716,6 +720,7 @@ body.is-preload #wrapper > section.intro > .content {
   #wrapper > section.intro > header > * {
     width: 100%;
   }
+
 }
 
 /* ==========================================================================
