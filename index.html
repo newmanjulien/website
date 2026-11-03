@@ -1,589 +1,136 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700,300i,600i,700i|Raleway:600,800");
+<!doctype html>
+
+<html>
+  <head>
+    <title>Julien</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico?" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Intro -->
+      <section class="intro">
+        <header>
+          <h1>Julien</h1>
+          <p>Going faster</p>
+          <ul class="actions">
+            <li>
+              <a href="#first" class="arrow scrolly"></a>
+            </li>
+          </ul>
+        </header>
+        <div class="content"></div>
+      </section>
+
+      <!-- Bio -->
+      <section id="first">
+        <header>
+          <h2>About me</h2>
+        </header>
+        <div class="content">
+          <p class="black-text">
+            I’ve been a machine learning engineer for 15 years and an AI startup founder for 10 years
+          </p>
+          <span class="image main"><img src="images/julien.png" /></span>
+          <p class="black-text">
+            I'm just starting to build <a
+              href="https://website.juliennewman.com/"
+              target="_blank"
+              class="black-text"
+              >Dinu</a
+            > to let sales reps handle contract negotiation themselves. My previous startups were
+            backed by Village Global, the VC
+            chaired by Reid Hoffman
+          </p>
+          <p class="black-text">
+            Check out the
+            <a
+              href="https://youtube.com/@blitzscaling"
+              target="_blank"
+              class="black-text"
+              >Blitzscaling Podcast</a
+            >,
+            which I co-hosted and which is based on Reid's book
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <header>
+          <h2>People</h2>
+        </header>
+        <div class="content">
+          <p class="black-text">A few people I spend time with</p>
+
+          <!-- First quote -->
+          <section class="nested-section">
+            <header class="nested-header">
+              <h3>Chris Yeh, Investor at Blitzscaling Ventures</h3>
+              <p>
+                "I have invested in Julien's businesses. He gets big things done
+                faster than almost anyone" (<a
+                  href="https://www.blitzscalingvc.com/about"
+                  target="_blank"
+                  >Chris' profile</a
+                >)
+              </p>
+            </header>
+            <div class="content nested-content">
+              <span class="image main"><img src="images/chris.jpeg" /></span>
+            </div>
+          </section>
+
+          <!-- Second quote -->
+          <section class="nested-section">
+            <header class="nested-header">
+              <h3>Andrew Chignell, Professor at Princeton</h3>
+              <p>
+                "Julien and I teach together at Princeton. He's a
+                thoughtful teacher and mentor" (<a
+                  href="https://religion.princeton.edu/people/andrew-chignell"
+                  target="_blank"
+                  >Andrew's profile</a
+                >)
+              </p>
+            </header>
+            <div class="content nested-content">
+              <span class="image main"><img src="images/andrew.png" /></span>
+            </div>
+          </section>
+
+          <!-- Third quote -->
+          <section class="nested-section">
+            <header class="nested-header">
+              <h3>The Honorable Thomas Mulcair</h3>
+              <p>
+                "Julien dropped out of college to work for me when he was 18. He
+                is uniquely creative" (<a
+                  href="https://en.wikipedia.org/wiki/Tom_Mulcair"
+                  target="_blank"
+                  >Tom's profile</a
+                >)
+              </p>
+            </header>
+            <div class="content nested-content">
+              <span class="image main"><img src="images/tom.png" /></span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
 
-/* ==========================================================================
-   CSS Variables
-   ========================================================================== */
 
-:root {
-  /* Colors */
-  --color-primary: #fb0404;
-  --color-white: #ffffff;
-  --color-black: #000000;
 
-  /* Fonts */
-  --font-primary: "Source Sans Pro", Helvetica, sans-serif;
-  --font-heading: "Raleway", Helvetica, sans-serif;
 
-  /* Transitions */
-  --transition-fast: 0.25s ease-in-out;
-  --transition-standard: 1s ease;
 
-  /* Spacing Scale */
-  --space-xs: 0.5rem; /* 8px */
-  --space-sm: 1rem; /* 16px */
-  --space-md: 1.5rem; /* 24px */
-  --space-lg: 2rem; /* 32px */
-  --space-xl: 3rem; /* 48px */
-  --space-2xl: 4rem; /* 64px */
-  --space-3xl: 5rem; /* 80px */
-  --space-4xl: 6rem; /* 96px */
-  --space-5xl: 7.5rem; /* 120px */
-  --space-6xl: 8rem; /* 128px */
-  --space-7xl: 10rem; /* 160px */
-
-  /* Shared geometry: spacing contracts before the layout stacks. */
-  --gutter: clamp(1.5rem, 4vw, 5rem);
-  --section-gap: clamp(3rem, 6vw, 7.5rem);
-  --text-measure: 32rem;
-
-  /* Fluid Typography */
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
-  --text-hero: clamp(3rem, 2rem + 4vw, 5rem);
-}
-
-/* ==========================================================================
-   CSS Reset (Modern Minimal)
-   ========================================================================== */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-img,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-/* ==========================================================================
-   Base Styles
-   ========================================================================== */
-
-html {
-  -webkit-text-size-adjust: 100%;
-  font-size: clamp(16px, 0.875rem + 0.25vw, 24px);
-}
-
-body {
-  background-color: var(--color-white);
-  color: var(--color-black);
-}
-
-body.is-preload *,
-body.is-preload *:before,
-body.is-preload *:after {
-  animation: none !important;
-  transition: none !important;
-}
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-
-body {
-  font-family: var(--font-primary);
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 0.0375em;
-  line-height: 2;
-}
-
-a {
-  transition: border-bottom-color var(--transition-fast);
-  text-decoration: none;
-  color: inherit;
-  border-bottom: dotted 1px;
-}
-
-a:hover {
-  text-decoration: none;
-  border-bottom-color: transparent;
-}
-
-strong,
-b {
-  font-weight: 600;
-  color: inherit;
-}
-
-em,
-i {
-  font-style: italic;
-}
-
-p {
-  margin: 0 0 var(--space-lg) 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: inherit;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: 0.175em;
-  line-height: 1.75;
-  margin: 0 0 var(--space-md) 0;
-  text-transform: uppercase;
-}
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  color: var(--color-black);
-  text-decoration: none;
-}
-
-h1 {
-  font-family: var(--font-primary);
-  font-size: var(--text-hero);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin: 0 0 var(--space-md) 0;
-  text-transform: none;
-}
-
-h2 {
-  font-size: var(--text-xl);
-  font-weight: 800;
-  margin: 0 0 var(--space-lg) 0;
-}
-
-h3 {
-  font-size: var(--text-sm);
-}
-
-/* ==========================================================================
-   Images
-   ========================================================================== */
-
-.image {
-  border: 0;
-  display: inline-block;
-  position: relative;
-}
-
-.image img {
-  display: block;
-}
-
-.image[data-position] img {
-  object-fit: cover;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.image[data-position="center"] img {
-  object-position: center;
-}
-
-.image.main {
-  display: block;
-  margin: 3rem 0;
-  width: 100%;
-}
-
-.image.main img {
-  width: 100%;
-}
-
-.image.main:first-child {
-  margin-top: 0;
-}
-
-.image.fill {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.image.fill img {
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* ==========================================================================
-   Actions (for scroll arrow)
-   ========================================================================== */
-
-ul.actions {
-  display: flex;
-  cursor: default;
-  list-style: none;
-  margin-left: -1rem;
-  padding-left: 0;
-}
-
-ul.actions li {
-  padding: 0 0 0 1rem;
-  vertical-align: middle;
-}
-
-/* ==========================================================================
-   Arrow
-   ========================================================================== */
-
-a.arrow {
-  border-bottom: 0;
-  display: inline-block;
-  height: 4rem;
-  position: relative;
-  width: 6rem;
-}
-
-a.arrow .label {
-  display: none;
-}
-
-a.arrow:before {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 512 512'%3E%3Cpath d='M442.53,346.28L293.65,495.16c-0.33,0.33-0.7,0.62-1.05,0.94c-9.16,9.77-22.15,15.9-36.6,15.9 c-14.44,0-27.43-6.13-36.59-15.88c-0.35-0.33-0.72-0.62-1.06-0.96L69.47,346.28c-19.62-19.62-19.62-51.44,0-71.05 c19.62-19.62,51.43-19.62,71.06,0l65.23,65.23V50.24C205.76,22.5,228.25,0,256,0s50.24,22.5,50.24,50.24v290.21l65.23-65.23 c19.62-19.62,51.43-19.62,71.05,0C462.15,294.84,462.15,326.66,442.53,346.28z' fill='%23ffffff' /%3E%3C/svg%3E");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: "";
-  display: inline-block;
-  height: 100%;
-  position: relative;
-  width: 3rem;
-}
-
-/* ==========================================================================
-   Shared desktop grid
-
-   The existing HTML stays unchanged. Subgrid lets the nested People rows
-   use the same two columns as the outer sections, without viewport offsets.
-   ========================================================================== */
-
-#wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  padding-bottom: var(--section-gap);
-}
-
-#wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0 50% 0 0;
-  background: var(--color-primary);
-  z-index: -1;
-  transition: opacity var(--transition-standard);
-}
-
-#wrapper > section {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: subgrid;
-  position: relative;
-  margin-top: var(--section-gap);
-}
-
-#wrapper > section:first-child {
-  margin-top: 0;
-}
-
-#wrapper section > header,
-#wrapper section > .content {
-  min-width: 0;
-}
-
-#wrapper section > header {
-  grid-column: 1;
-  color: var(--color-white);
-  text-align: right;
-  padding-inline: var(--gutter) calc(2 * var(--gutter));
-  overflow-wrap: anywhere;
-}
-
-#wrapper section > header > * {
-  max-width: 25rem;
-  margin-left: auto;
-}
-
-#wrapper section > header > :last-child {
-  margin-bottom: 0;
-}
-
-#wrapper section > header h1 + p {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  letter-spacing: 0.175em;
-  line-height: 2.5;
-  text-transform: uppercase;
-}
-
-#wrapper section > header ul.actions {
-  justify-content: flex-end;
-}
-
-/* The header and its content share a row. Ordinary content stays on the
-   right; nested sections span both columns lower down that same row. */
-#wrapper > section > header,
-#wrapper > section > .content {
-  grid-row: 1;
-}
-
-#wrapper > section > .content {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: subgrid;
-  align-content: start;
-  color: var(--color-black);
-}
-
-#wrapper > section > .content > :not(section) {
-  grid-column: 2;
-  min-width: 0;
-  margin-inline: var(--gutter);
-  max-width: var(--text-measure);
-  overflow-wrap: anywhere;
-}
-
-#wrapper > section > .content > .image.main {
-  width: auto;
-}
-
-#wrapper > section > .content > :last-child {
-  margin-bottom: 0;
-}
-
-/* Nested rows inherit the actual column widths, including on small desktops. */
-#wrapper > section > .content > section {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: subgrid;
-  margin-top: var(--section-gap);
-}
-
-#wrapper > section > .content > section > .content {
-  grid-column: 2;
-  padding-inline: var(--gutter);
-  color: var(--color-black);
-}
-
-#wrapper > section > .content > section > .content > * {
-  max-width: var(--text-measure);
-}
-
-#wrapper > section > .content > section > .content > :last-child {
-  margin-bottom: 0;
-}
-
-/* Decorative rail and heading connectors use the same gutter as the text. */
-#wrapper > section > header::before {
-  content: "";
-  position: absolute;
-  left: calc(50% - var(--gutter));
-  width: 2px;
-  height: calc(100% + var(--section-gap));
-  margin-top: calc(var(--text-xl) * 0.55);
-  background: var(--color-white);
-  pointer-events: none;
-}
-
-#wrapper > section > header h1,
-#wrapper > section > header h2 {
-  position: relative;
-}
-
-#wrapper > section > header h1::before,
-#wrapper > section > header h2::before {
-  content: "";
-  position: absolute;
-  top: 0.55em;
-  right: calc(-1 * var(--gutter));
-  width: calc(var(--gutter) / 2);
-  height: 2px;
-  background: var(--color-white);
-  pointer-events: none;
-}
-
-#wrapper > section > header h1::after,
-#wrapper > section > header h2::after {
-  content: "";
-  position: absolute;
-  top: calc(0.55em - 0.25rem + 1px);
-  right: calc(-0.5 * var(--gutter) - 0.25rem);
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--color-white);
-  pointer-events: none;
-}
-
-/* Intro retains the full-height red/white composition on desktop. */
-#wrapper > section.intro {
-  min-height: 100vh;
-  min-height: 100svh;
-  align-items: center;
-  transition:
-    opacity var(--transition-standard),
-    transform var(--transition-standard);
-}
-
-#wrapper > section.intro > header {
-  padding-top: var(--space-2xl);
-}
-
-#wrapper > section.intro > header::before {
-  margin-top: calc(var(--text-hero) * 0.55);
-}
-
-#wrapper > section.intro > .content {
-  grid-column: 2;
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
-#wrapper > section:last-of-type > header::before {
-  height: calc(100% - var(--text-xl) * 0.55);
-}
-
-#wrapper > section:last-of-type > header::after {
-  content: "";
-  position: absolute;
-  left: calc(50% - var(--gutter) - 0.25rem + 1px);
-  bottom: -0.25rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--color-white);
-}
-
-body.is-preload #wrapper::before,
-body.is-preload #wrapper > section.intro {
-  opacity: 0;
-  transform: translateY(1rem);
-}
-
-/* ==========================================================================
-   Stacked layout: 900px and below
-   ========================================================================== */
-
-@media screen and (max-width: 900px) {
-  #wrapper {
-    grid-template-columns: minmax(0, 1fr);
-    padding-bottom: 0;
-  }
-
-  #wrapper::before,
-  #wrapper > section > header::before,
-  #wrapper > section > header::after,
-  #wrapper > section > header h1::before,
-  #wrapper > section > header h1::after,
-  #wrapper > section > header h2::before,
-  #wrapper > section > header h2::after {
-    display: none;
-  }
-
-  #wrapper > section {
-    margin-top: 0;
-  }
-
-  #wrapper section > header {
-    grid-column: 1;
-    text-align: left;
-    padding-inline: 0;
-  }
-
-  #wrapper section > header > * {
-    margin-left: 0;
-  }
-
-  #wrapper > section > header {
-    grid-row: auto;
-    padding: var(--section-gap) var(--gutter);
-    background: var(--color-primary);
-  }
-
-  #wrapper > section > .content {
-    grid-row: auto;
-    padding-block: var(--section-gap);
-  }
-
-  #wrapper > section > .content > :not(section) {
-    grid-column: 1;
-  }
-
-  #wrapper > section > .content > section {
-    margin-inline: var(--gutter);
-  }
-
-  #wrapper > section > .content > section:first-child {
-    margin-top: 0;
-  }
-
-  #wrapper > section > .content > section > header {
-    color: var(--color-black);
-    max-width: var(--text-measure);
-  }
-
-  #wrapper > section > .content > section > header > * {
-    max-width: none;
-  }
-
-  #wrapper > section > .content > section > .content {
-    grid-column: 1;
-    padding-inline: 0;
-  }
-
-  #wrapper > section.intro {
-    min-height: 0;
-  }
-
-  #wrapper > section.intro > header {
-    padding: clamp(5rem, 12vw, 8rem) var(--gutter)
-      clamp(2.5rem, 6vw, 5rem);
-  }
-
-  #wrapper > section.intro > header ul.actions,
-  #wrapper > section.intro > .content {
-    display: none;
-  }
-}
-
-.black-text {
-  color: var(--color-black);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #wrapper::before,
-  #wrapper > section.intro,
-  a {
-    transition: none;
-  }
-
-  body.is-preload #wrapper > section.intro {
-    transform: none;
-  }
-}
