@@ -449,8 +449,14 @@ a.arrow:before {
   transition: opacity var(--transition-standard);
 }
 
+/* FIX 1 of 3: the header itself no longer has a transform/transition. */
 #wrapper > section.intro > header {
   padding-top: var(--space-2xl);
+}
+
+/* Animate the children, not the header: a transform on the header would make
+   it the containing block for the rail (header::before) while it runs. */
+#wrapper > section.intro > header > * {
   transition: transform var(--transition-standard);
 }
 
@@ -484,7 +490,8 @@ body.is-preload #wrapper > section.intro {
   opacity: 0;
 }
 
-body.is-preload #wrapper > section.intro > header {
+/* FIX 2 of 3: the preload offset is applied to the header's children. */
+body.is-preload #wrapper > section.intro > header > * {
   transform: translateY(1rem);
 }
 
@@ -578,15 +585,16 @@ body.is-preload #wrapper > section.intro > header {
   color: var(--color-black);
 }
 
+/* FIX 3 of 3: reduced-motion rules now target the header's children too. */
 @media (prefers-reduced-motion: reduce) {
   #wrapper::before,
   #wrapper > section.intro,
-  #wrapper > section.intro > header,
+  #wrapper > section.intro > header > *,
   a {
     transition: none;
   }
 
-  body.is-preload #wrapper > section.intro > header {
+  body.is-preload #wrapper > section.intro > header > * {
     transform: none;
   }
 }
