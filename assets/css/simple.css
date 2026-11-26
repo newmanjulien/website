@@ -1,0 +1,121 @@
+/* Article layout; typography and colours come from the main site. */
+.post-page {
+  --post-rule: #dedede;
+  --post-rail: 11rem;
+  --post-gap: 2rem;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: var(--gutter);
+  z-index: 2;
+  padding: 0.5rem 1rem;
+  background: var(--color-white);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.post-page a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+.post-shell {
+  width: min(100% - 2 * var(--gutter), 72rem);
+  margin-inline: auto;
+}
+
+.post-shell {
+  padding-top: clamp(2rem, 5vw, 4rem);
+}
+
+.post-header,
+.post-content-grid {
+  display: grid;
+  grid-template-columns: var(--post-rail) minmax(0, 1fr);
+  column-gap: var(--post-gap);
+}
+
+.post-content-grid {
+  border-top: 1px solid var(--post-rule);
+}
+
+.post-heading {
+  grid-column: 2;
+  max-width: 47rem;
+  padding: 0.9rem 0 1.75rem;
+}
+
+.post-heading h1 {
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.85rem, 3.25vw, 2.8rem);
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.post-standfirst {
+  max-width: 36rem;
+  margin: 1.25rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.post-body {
+  grid-column: 2;
+  max-width: 36rem;
+  padding-top: 1.25rem;
+  padding-bottom: 3rem;
+  font-size: 1.075rem;
+  line-height: 1.65;
+}
+
+.post-body > p {
+  margin-bottom: 1.35rem;
+}
+
+.post-opening::first-letter {
+  float: left;
+  margin: 0.08em 0.1em 0 0;
+  color: var(--color-primary);
+  font-size: 4.8em;
+  font-weight: 700;
+  line-height: 0.75;
+}
+
+@media (max-width: 900px) {
+  .post-page {
+    --post-rail: 8rem;
+    --post-gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .post-header,
+  .post-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .post-heading,
+  .post-body {
+    grid-column: 1;
+  }
+
+  .post-heading {
+    padding-top: 1.25rem;
+  }
+
+  .post-body {
+    font-size: 1.025rem;
+  }
+
+  .post-standfirst {
+    font-size: 1.125rem;
+  }
+}
